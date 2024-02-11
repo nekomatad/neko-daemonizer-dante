@@ -1,0 +1,6 @@
+/.idea/
+/tests/
+
+poetry.lock
+
+**/__pycache__/

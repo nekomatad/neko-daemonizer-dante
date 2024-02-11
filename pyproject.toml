@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "neko-daemonizer-dante"
+version = "0.1.0"
+description = ""
+authors = ["hhh"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[tool.poetry.group.neko.dependencies]
+neko-daemonizer-std = {path = "../neko-daemonizer-std", develop = true}
+neko-configparser = {path = "../neko-configparser", develop = true}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
