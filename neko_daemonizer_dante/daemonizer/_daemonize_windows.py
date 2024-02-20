@@ -378,7 +378,9 @@ def _daemonize1(pid_file, *args, chdir=None, stdin_goto=None, stdout_goto=None,
     before_script = '"'
 
     if script_path.endswith('\\__main__.py'):
-        script_path = script_path[:-12].split('\\')[-1]
+        script_path = script_path[:-12]
+        script_path = script_path.removeprefix(os.getcwd())
+        script_path = script_path.replace('\\', '.').removeprefix('.')
         before_script = '-m "'
 
     if explicit_rescript is None:
